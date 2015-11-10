@@ -1,25 +1,36 @@
-var Photo = function(path) {
+var choices = [];
+
+var CarBrand = function(path) {
 this.path = path;
-this.photos = [];
+this.votes = 0;
+choices.push(this);
+};
 
 
+var astonMartin = new CarBrand('img/aston-martin.jpg');
+var audi = new CarBrand('img/audi.png');
+var bentley = new CarBrand('img/Bentley.png');
+var benz = new CarBrand('img/Benz.png');
+var bmw = new CarBrand('img/BMW.png');
+var bugatti = new CarBrand('img/bugatti.jpg');
+var ferrari = new CarBrand('img/ferrari.jpg');
+var lamborghini = new CarBrand('img/lamborghini.png');
+var maserati = new CarBrand('img/Maserati.png');
+var porsche = new CarBrand('img/porsche.png');
+var rollsRoyce = new CarBrand('img/rolls-royce.jpg');
+var tesla = new CarBrand('img/tesla.png');
+
+//gets random photo
+var randomPhoto = function() {
+  return Math.floor(Math.random() * choices.length);
+}
+//displays on HTML
+function render() {
+  var photo1 = document.getElementById('photo1');
+  var photo2 = document.getElementById('photo2');
+  photo1.src = choices[randomPhoto()].path;
+  photo2.src = choices[randomPhoto()].path;
 
 }
 
-
-var aston martin = new Photo ('img/aston-martin.jpg');
-var audi = new Photo ('img/audi.png');
-var bentley = new Photo ('img/Bentley.png');
-var benz = new Photo ('img/Benz.png');
-var bmw = new Photo ('img/BMW.png');
-var bugatti = new Photo ('img/bugatti.jpg');
-var ferrari = new Photo ('img/ferrari.jpg');
-var lamborghini = new Photo ('img/lamborghini.png');
-var maserati = new Photo ('img/Maserati.png');
-var porsche = new Photo ('img/porsche.png');
-var rolls royce = new Photo ('img/rolls-royce.jpg');
-var tesla = new Photo ('img/tesla.png');
-
-
-
-]
+render();
