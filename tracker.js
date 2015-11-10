@@ -6,24 +6,33 @@ this.votes = 0;
 userPick.push(this);
 };
 
-//gets random number
-var randomNumber = function() {
-  return Math.floor(Math.random() * userPick.length);
-}
-//displays on HTML
-function displayPhoto() {
-  var photo1 = document.getElementById('photo1');
-  var random1 = randomNumber();
-  photo1.src = userPick[random1].path;
+var tracker = {
+  pic1: 0,
+  pic2: 0,
 
+//gets random number
+randomNumber: function() {
+  return Math.floor(Math.random() * userPick.length);
+},
+//displays on HTML
+displayPhoto: function() {
+  this.pic1 = userPick[this.randomNumber()].path;
+  this.pic2 = userPick[this.randomNumber()].path;
+  var photo1 = document.getElementById('photo1');
   var photo2 = document.getElementById('photo2');
-  var random2 = randomNumber();
-  photo2.src = userPick[random2].path;
+  photo1.src = this.pic1;
+  photo2.src = this.pic2;
 
   while (photo1.src === photo2.src){
-    photo2.src = userPick[randomNumber()].path;
-  }
-}
+    photo2.src = userPick[this.randomNumber()].path;
+    };
+  },
+};
+
+// function vote(event) {
+//   event.preventDefault();
+
+// }
 
 
 var astonMartin = new CarBrand('img/aston-martin.jpg');
@@ -42,18 +51,8 @@ var tesla = new CarBrand('img/tesla.png');
 
 
 
-photo1.addEventListener('click', function(){
-  console.log('click');
-  userPick[random1].votes += 1;
-  console.log(userPick[random1]);
-
-});
-photo2.addEventListener('click', function(){
-  console.log('click');
-  userPick[random2].votes += 1;
-  console.log(userPick[random2]);
-});
-
+// photo1.addEventListener('click', voteLeft)
+// photo2.addEventListener('click', voteRight)
 // var data = [
 //     {
 //         value: 300,
@@ -107,4 +106,4 @@ photo2.addEventListener('click', function(){
 
 
 
-displayPhoto();
+tracker.displayPhoto();
