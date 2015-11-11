@@ -37,10 +37,12 @@ displayPhoto: function() {
 var voteLeft = function() {
   tracker.pic1.votes +=1;
   console.log(tracker.pic1.votes);
+  tracker.displayPhoto();
 }
 var voteRight = function() {
   tracker.pic2.votes +=1;
   console.log(tracker.pic2.votes);
+  tracker.displayPhoto();
 }
 
 var astonMartin = new CarBrand('img/aston-martin.jpg');
