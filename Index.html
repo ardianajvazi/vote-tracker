@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Vote Tracker</title>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <head>
+    <title>Vote Tracker</title>
+      <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="chart.js"></script>
+  </head>
 
-</head>
 <body>
 
-<header>Which car brand do you like more?</header>
+  <header>Which car brand do you like more?</header>
 
-<div id="pagewrap">
+  <div id="pagewrap">
 
-<article> <img id="photo1"> </article>
+  <article> <img id="photo1"> </article>
 
-<article id="VS">VS</article>
+  <article id="VS">VS</article>
 
-<article><img id="photo2"></article>
+  <article><img id="photo2"></article>
 
-<script type="text/javascript" src="tracker.js"></script>
-</div>
+  <script type="text/javascript" src="tracker.js"></script>
+  </div>
 
+<canvas id="pieChart" width="150" height="150"></canvas>
 
 </body>
 </html>
