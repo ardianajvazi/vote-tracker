@@ -1,4 +1,6 @@
 var userPick = [];
+var photo1 = document.getElementById('photo1');
+var photo2 = document.getElementById('photo2');
 
 var CarBrand = function(path) {
 this.path = path;
@@ -16,12 +18,10 @@ randomNumber: function() {
 },
 //displays on HTML
 displayPhoto: function() {
-  this.pic1 = userPick[this.randomNumber()].path;
-  this.pic2 = userPick[this.randomNumber()].path;
-  var photo1 = document.getElementById('photo1');
-  var photo2 = document.getElementById('photo2');
-  photo1.src = this.pic1;
-  photo2.src = this.pic2;
+  this.pic1 = userPick[this.randomNumber()];
+  this.pic2 = userPick[this.randomNumber()];
+  photo1.src = this.pic1.path;
+  photo2.src = this.pic2.path;
 
   while (photo1.src === photo2.src){
     photo2.src = userPick[this.randomNumber()].path;
@@ -34,6 +34,14 @@ displayPhoto: function() {
 
 // }
 
+var voteLeft = function() {
+  tracker.pic1.votes +=1;
+  console.log(tracker.pic1.votes);
+}
+var voteRight = function() {
+  tracker.pic2.votes +=1;
+  console.log(tracker.pic2.votes);
+}
 
 var astonMartin = new CarBrand('img/aston-martin.jpg');
 var audi = new CarBrand('img/audi.png');
@@ -49,10 +57,11 @@ var rollsRoyce = new CarBrand('img/rolls-royce.jpg');
 var tesla = new CarBrand('img/tesla.png');
 
 
+photo1.addEventListener('click', voteLeft)
+photo2.addEventListener('click', voteRight)
 
 
-// photo1.addEventListener('click', voteLeft)
-// photo2.addEventListener('click', voteRight)
+
 // var data = [
 //     {
 //         value: 300,
