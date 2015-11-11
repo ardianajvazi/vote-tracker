@@ -57,9 +57,33 @@ var tesla = new CarBrand('img/tesla.png');
 photo1.addEventListener('click', voteLeft)
 photo2.addEventListener('click', voteRight)
 
-
-
-
-
-
 tracker.displayPhoto();
+
+
+
+var data = [
+    {
+        value: voteLeft.votes,
+        color: "#46BFBD",
+        highlight: "#FF5A5E",
+        label: "Blue"
+    },
+    {
+        value: voteRight.votes,
+        color: "#F7464A",
+        highlight: "#5AD3D1",
+        label: "Red"
+    },
+
+];
+
+var ctx = document.getElementById('pieChart').getContext('2d');
+
+var myNewChart = new Chart(ctx).Pie(data,pieOptions);
+
+
+
+
+
+
+
