@@ -29,11 +29,6 @@ displayPhoto: function() {
   },
 };
 
-// function vote(event) {
-//   event.preventDefault();
-
-// }
-
 var voteLeft = function() {
   tracker.pic1.votes +=1;
   console.log(tracker.pic1.votes);
@@ -55,7 +50,7 @@ var ferrari = new CarBrand('img/ferrari.jpg');
 var lamborghini = new CarBrand('img/lamborghini.png');
 var maserati = new CarBrand('img/Maserati.png');
 var porsche = new CarBrand('img/porsche.png');
-var rollsRoyce = new CarBrand('img/rolls-royce.jpg');
+var rollsRoyce = new CarBrand('img/rolls-royce.png');
 var tesla = new CarBrand('img/tesla.png');
 
 
@@ -64,56 +59,6 @@ photo2.addEventListener('click', voteRight)
 
 
 
-// var data = [
-//     {
-//         value: 300,
-//         label: "Red"
-//     },
-//     {
-//         value: 50,
-//         label: "Green"
-//     },
-//     {
-//         value: 100,
-//         label: "Yellow"
-//     }
-//         {
-//         value: 300,
-//         label: "Red"
-//     },
-//     {
-//         value: 50,
-//         label: "Green"
-//     },
-//     {
-//         value: 100,
-//         label: "Yellow"
-//     }
-//         {
-//         value: 300,
-//         label: "Red"
-//     },
-//     {
-//         value: 50,
-//         label: "Green"
-//     },
-//     {
-//         value: 100,
-//         label: "Yellow"
-//     }
-//         {
-//         value: 300,
-//         label: "Red"
-//     },
-//     {
-//         value: 50,
-//         label: "Green"
-//     },
-//     {
-//         value: 100,
-//         label: "Yellow"
-//     }
-// ]
 
 
 
